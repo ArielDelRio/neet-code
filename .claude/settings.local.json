@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(java --version 2>&1)",
+      "PowerShell($env:JAVA_HOME)",
+      "PowerShell(winget install Microsoft.OpenJDK.21 --accept-package-agreements --accept-source-agreements)",
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\\" | Where-Object {$_.Name -match \"jdk|java|jre\"} | Select-Object FullName; Get-ChildItem \"C:\\\\Program Files \\(x86\\)\\\\\" | Where-Object {$_.Name -match \"jdk|java|jre\"} | Select-Object FullName)",
+      "PowerShell(Get-Command java -ErrorAction SilentlyContinue)",
+      "PowerShell($settingsPath = \"$env:APPDATA\\\\Code\\\\User\\\\settings.json\"; if \\(Test-Path $settingsPath\\) { Get-Content $settingsPath } else { echo \"No existe\" })",
+      "PowerShell(\\(Get-ChildItem \"c:\\\\storage\\\\develop\\\\neet-code\\\\openJdk-26\" -Recurse | Measure-Object -Property Length -Sum\\).Sum / 1MB; \\(Get-ChildItem \"c:\\\\storage\\\\develop\\\\neet-code\\\\oracleJdk-26\" -Recurse | Measure-Object -Property Length -Sum\\).Sum / 1MB)",
+      "PowerShell(& \"C:\\\\Program Files\\\\Microsoft\\\\jdk-21.0.11.10-hotspot\\\\bin\\\\java.exe\" --version)",
+      "PowerShell(java -version 2>&1)",
+      "Bash(Get-ChildItem -Recurse \"c:\\\\storage\\\\develop\\\\neet-code\")",
+      "Bash(Select-Object FullName)",
+      "PowerShell(mvn --version 2>&1)",
+      "PowerShell(winget --version)",
+      "PowerShell(scoop --version)",
+      "PowerShell(choco --version)",
+      "PowerShell(winget install Apache.Maven --accept-source-agreements --accept-package-agreements)",
+      "PowerShell(winget search maven)",
+      "PowerShell(gradle --version 2>&1)"
+    ]
+  }
+}
